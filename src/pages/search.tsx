@@ -102,8 +102,7 @@ const SearchResults: React.FC = () => {
           ) : (
             <Button
               onClick={() => {
-              
-                if (query) {
+                if ( query) {
                   const searchQuery = Array.isArray(query) ? query[0] : query; 
                   fetchRecipesFromApi(searchQuery, '', diet); 
                 }
@@ -136,7 +135,7 @@ const SearchResults: React.FC = () => {
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={() => handleViewRecipe(recipe.id )} 
+                  onClick={() => handleViewRecipe(Number(recipe.id))} 
                   className="mt-2"
                 >
                   View Recipe
